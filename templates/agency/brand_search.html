@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block contenido %}
+<form method="get" action={% url "search_brand" %}>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    {% for brand in results %}
+        <li>{{ brand.name }} {{ brand.city }} {{ brand.address}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

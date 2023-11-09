@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block contenido %}
+<form method="get" action={% url "search_model_girl" %}>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    {% for girl in results %}
+        <li>{{ girl.name }} {{ girl.last_name }} {{ girl.height}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

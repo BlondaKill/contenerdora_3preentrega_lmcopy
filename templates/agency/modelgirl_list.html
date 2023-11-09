@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+<h1>Lista</h1>
+<ul>
+    {% for girl in girls %}
+        <li>{{ girl.name }} {{ girl.last_name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
